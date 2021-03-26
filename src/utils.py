@@ -1,8 +1,8 @@
+import re
+import numpy as np
 
 def clean_years(x):
-    import re
-    pattern = r"\d{4}"
-    x = "".join(re.findall(pattern, str(x)))
+    x = "".join(re.findall(r"\d{4}", str(x)))
     if x:
         return int(x)
     else: 
@@ -13,4 +13,4 @@ def get_month(x):
         x = x.split("-")
         return x[1]
     else:
-        return "UNK"
+        return np.nan
